@@ -1,0 +1,13 @@
+a.out
+*.adr
+*.dis
+*.lst
+*.map
+*.o
+*.s
+bgconf.h
+es.c
+mkmusic
+music.h
+pattern.h
+tone.c
