@@ -28,10 +28,11 @@ void putv(u16 v, s8 n, u8 m) {
 	u8 f, r = 2 + (m & 0xf), a = 7 + (m & 0x20), p = 0x20 + (m & 0x10);
 	if (f = m & 0x80 && v & 0x8000) v = -v;
 	do {
-		u8 t = v % r + '0';
+		u16 d = v / r, t = v - d * r + '0';
 		if (t > '9') t += a;
 		c[i++] = t;
-	} while (v /= r);
+		v = d;
+	} while (v);
 	if (f) c[i++] = '-';
 	if (n > 0) while (n-- > i) putchar(p);
 	else n += i;
